@@ -78,46 +78,6 @@ Admin manages leads through dashboard
 
 ---
 
-# Project Structure
-
-```plaintext
-LEAD_SYSTEM/
-│
-├── static/
-│   └── style.css
-│
-├── templates/
-│   ├── index.html
-│   └── dashboard.html
-│
-├── Screenshots/
-│
-├── instance/
-│
-├── app.py
-├── requirements.txt
-├── .gitignore
-├── README.md
-└── .env
-```
-
----
-
-# Database Schema
-
-## Lead Table
-
-| Column | Type | Description |
-|---|---|---|
-| id | Integer | Primary Key |
-| name | String | Customer Name |
-| email | String | Customer Email |
-| phone | String | Phone Number |
-| business | String | Business Type |
-| message | Text | Customer Message |
-| status | String | Lead Status |
-
----
 
 # Installation Steps
 
@@ -168,9 +128,9 @@ pip install -r requirements.txt
 Create `.env` file:
 
 ```env
-EMAIL_USER=your_email
-EMAIL_PASS=your_app_password
-GROQ_API_KEY=your_groq_api_key
+EMAIL_USER=my_email
+EMAIL_PASS=my_app_password
+GROQ_API_KEY=my_groq_api_key
 ```
 
 ---
