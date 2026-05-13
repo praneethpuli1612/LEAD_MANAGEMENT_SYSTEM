@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+        <div class="logo">
+            LeadFlow CRM
+        </div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/dashboard">Dashboard</a>
+        </div>
+    </nav>
+
+    <!-- DASHBOARD HEADER -->
+
+    <section class="dashboard-top">
+        <h1>Lead Dashboard</h1>
+        <p>Monitor, search, filter, and manage submitted leads efficiently
+        through a centralized and organized dashboard interface.</p>
+    </section>
+
+    <!-- FILTER BAR -->
+
+    <form method="GET" class="search-form">
+        <input type="text"
+               name="search"
+               placeholder="Search by name">
+        <select name="status">
+            <option value="All">All Leads</option>
+            <option value="New">New</option>
+            <option value="Contacted">Contacted</option>
+            <option value="Closed">Closed</option>
+        </select>
+        <button type="submit">
+            Apply Filter
+        </button>
+    </form>
+
+    <!-- TABLE -->
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Business</th>
+                <th>Message</th>
+                <th>Status</th>
+                <th>Delete</th>
+            </tr>
+            {% for lead in leads %}
+            <tr>
+                <td>{{ lead.id }}</td>
+                <td>{{ lead.name }}</td>
+                <td>{{ lead.email }}</td>
+                <td>{{ lead.phone }}</td>
+                <td>{{ lead.business }}</td>
+                <td>{{ lead.message }}</td>
+                <td>
+                    <form action="/update_status/{{ lead.id }}"
+                          method="POST"
+                          class="action-form">
+                        <select name="status">
+                            <option value="New"
+                            {% if lead.status == "New" %}selected{% endif %}>
+                            New
+                            </option>
+                            <option value="Contacted"
+                            {% if lead.status == "Contacted" %}selected{% endif %}>
+                            Contacted
+                            </option>
+                            <option value="Closed"
+                            {% if lead.status == "Closed" %}selected{% endif %}>
+                            Closed
+                            </option>
+                        </select>
+                        <button type="submit">
+                            Update
+                        </button>
+                    </form>
+                </td>
+                <td>
+                    <form action="/delete/{{ lead.id }}"
+                          method="POST">
+                        <button type="submit"
+                                class="delete-btn">
+                            Delete
+                        </button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

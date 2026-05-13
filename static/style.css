@@ -1,0 +1,293 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fb;
+    color: #333;
+}
+
+/* NAVBAR */
+
+.navbar{
+    background-color: #111827;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 60px;
+}
+
+.logo{
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.nav-links{
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a{
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover{
+    color: #60a5fa;
+}
+
+/* HERO */
+
+.hero{
+    text-align: center;
+    padding: 80px 20px 60px;
+}
+
+.hero h1{
+    font-size: 52px;
+    margin-bottom: 20px;
+    color: #111827;
+}
+
+.hero p{
+    font-size: 20px;
+    color: #555;
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.6;
+}
+
+.hero-btn{
+    display: inline-block;
+    margin-top: 35px;
+    text-decoration: none;
+    background-color: #2563eb;
+    color: white;
+    padding: 14px 26px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.hero-btn:hover{
+    background-color: #1d4ed8;
+}
+
+/* FORM */
+
+.form-section{
+    margin-bottom: 60px;
+}
+
+.form-card{
+    width: 450px;
+    background-color: white;
+    margin: auto;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0px 4px 20px rgba(0,0,0,0.08);
+}
+
+.form-card h2{
+    text-align: center;
+    margin-bottom: 25px;
+    color: #111827;
+}
+
+form label{
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+form input,
+form select,
+form textarea{
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+form textarea{
+    resize: vertical;
+}
+
+form button{
+    width: 100%;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form button:hover{
+    background-color: #1d4ed8;
+}
+
+/* DASHBOARD */
+
+.dashboard-top{
+    text-align: center;
+
+    padding: 50px 20px 20px;
+}
+
+.dashboard-top h1{
+    font-size: 42px;
+
+    margin-bottom: 10px;
+}
+
+.dashboard-top p{
+    color: #666;
+}
+
+/* SEARCH */
+
+.search-form{
+    width: 92%;
+
+    background-color: white;
+
+    margin: 25px auto;
+
+    padding: 20px;
+
+    border-radius: 14px;
+
+    display: flex;
+
+    gap: 15px;
+
+    align-items: center;
+
+    box-shadow: 0px 4px 20px rgba(0,0,0,0.08);
+}
+
+.search-form input{
+    flex: 2;
+}
+
+.search-form select{
+    flex: 1;
+}
+
+.search-form button{
+    width: auto;
+
+    padding: 12px 24px;
+}
+
+/* TABLE */
+
+.table-container{
+    width: 92%;
+
+    margin: 30px auto 60px;
+
+    overflow-x: auto;
+}
+
+table{
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background-color: white;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    box-shadow: 0px 4px 20px rgba(0,0,0,0.08);
+}
+
+th{
+    background-color: #2563eb;
+
+    color: white;
+
+    padding: 16px;
+
+    font-size: 15px;
+}
+
+td{
+    padding: 14px;
+
+    text-align: center;
+
+    border-bottom: 1px solid #eee;
+}
+
+tr:hover{
+    background-color: #f9fafb;
+}
+
+/* ACTION FORMS */
+
+.action-form{
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.action-form button{
+    width: 100%;
+}
+
+.delete-btn{
+    background-color: #dc2626 !important;
+}
+
+.delete-btn:hover{
+    background-color: #b91c1c !important;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 768px){
+
+    .navbar{
+        flex-direction: column;
+
+        gap: 15px;
+
+        padding: 20px;
+    }
+
+    .hero h1{
+        font-size: 34px;
+    }
+
+    .hero p{
+        font-size: 16px;
+    }
+
+    .form-card{
+        width: 92%;
+    }
+
+    .search-form{
+        flex-direction: column;
+    }
+
+    .search-form input,
+    .search-form select,
+    .search-form button{
+        width: 100%;
+    }
+}
